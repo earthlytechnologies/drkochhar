@@ -58,7 +58,7 @@ export default function ExecutiveAuditPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-slate-900 text-slate-400 selection:bg-sky-500/30 selection:text-white">
+    <main className="min-h-screen w-full overflow-x-hidden bg-slate-900 text-slate-400 selection:bg-sky-500/30 selection:text-white">
       {/* ═══ SECTION 1 — EXECUTIVE SUMMARY ═══ */}
       <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(3,105,161,0.08),_transparent_60%)]" />
@@ -69,10 +69,10 @@ export default function ExecutiveAuditPage() {
             initial="hidden"
             animate="visible"
             variants={fadeUp}
-            className="rounded-3xl border border-slate-700/50 bg-slate-800/60 backdrop-blur-2xl p-10 md:p-14 mb-12 shadow-[0_8px_30px_rgb(0,0,0,0.2)]"
+            className="rounded-3xl border border-slate-700/50 bg-slate-800/60 backdrop-blur-2xl p-6 md:p-14 mb-12 shadow-[0_8px_30px_rgb(0,0,0,0.2)]"
           >
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-600 bg-slate-700/50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-sky-400">
-              <Shield className="h-3.5 w-3.5" />
+            <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-2xl border border-slate-600 bg-slate-700/50 px-4 py-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.15em] text-sky-400">
+              <Shield className="h-3.5 w-3.5 flex-shrink-0" />
               Strategic Digital Growth Proposal · Confidential
             </p>
 
@@ -318,17 +318,33 @@ export default function ExecutiveAuditPage() {
                 </div>
 
                 {/* Floating Annotations */}
-                <div className="absolute top-8 left-8 md:top-12 md:left-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                <div className="hidden md:flex absolute top-8 left-8 md:top-12 md:left-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#0D9488]" />
                   <span className="text-xs font-bold text-slate-200">Targeted Meta Ads Zone (5km)</span>
                 </div>
-                <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                <div className="hidden md:flex absolute bottom-8 right-8 md:bottom-12 md:right-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-sky-500" />
                   <span className="text-xs font-bold text-slate-200">Google Local Service Ads Overlay</span>
                 </div>
-                <div className="absolute bottom-8 left-8 md:top-12 md:right-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg flex items-center gap-2">
+                <div className="hidden md:flex absolute bottom-8 left-8 md:top-12 md:right-12 bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-2 rounded-xl shadow-lg items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
                   <span className="text-xs font-bold text-slate-200">Geofenced High-Intent Capture</span>
+                </div>
+              </div>
+
+              {/* Mobile Legend (Mobile Only) */}
+              <div className="md:hidden mt-6 w-full flex flex-col gap-2">
+                <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-3 rounded-xl flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#0D9488] flex-shrink-0" />
+                  <span className="text-[11px] font-bold text-slate-200">Targeted Meta Ads Zone (5km)</span>
+                </div>
+                <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-3 rounded-xl flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-sky-500 flex-shrink-0" />
+                  <span className="text-[11px] font-bold text-slate-200">Google Local Service Ads Overlay</span>
+                </div>
+                <div className="bg-slate-800/80 backdrop-blur-sm border border-slate-600 px-4 py-3 rounded-xl flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 flex-shrink-0" />
+                  <span className="text-[11px] font-bold text-slate-200">Geofenced High-Intent Capture</span>
                 </div>
               </div>
             </div>
@@ -339,12 +355,12 @@ export default function ExecutiveAuditPage() {
           </motion.div>
 
           {/* CTA */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp} className="text-center">
-            <button className="group relative inline-flex items-center gap-3 bg-sky-500 text-white font-bold py-5 px-12 rounded-2xl text-lg hover:bg-sky-400 transition-colors cursor-pointer shadow-[0_8px_30px_rgba(3,105,161,0.3)] hover:shadow-[0_12px_40px_rgba(3,105,161,0.4)]">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} custom={2} variants={fadeUp} className="text-center w-full px-4 md:px-0">
+            <button className="group relative inline-flex w-full sm:w-auto justify-center items-center gap-3 bg-sky-500 text-white font-bold py-4 px-6 md:py-5 md:px-12 rounded-2xl text-sm md:text-lg hover:bg-sky-400 transition-colors cursor-pointer shadow-[0_8px_30px_rgba(3,105,161,0.3)] hover:shadow-[0_12px_40px_rgba(3,105,161,0.4)]">
               <span className="absolute inset-0 rounded-2xl border-2 border-sky-400 animate-ping opacity-15" />
-              <span className="relative flex items-center gap-3">
-                Approve Architecture & Schedule Kickoff
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className="relative flex items-center justify-center gap-2 md:gap-3 text-center">
+                Approve Architecture & Kickoff
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" />
               </span>
             </button>
             <p className="text-sm text-slate-500 mt-4">Valid for 14 days from date of presentation.</p>

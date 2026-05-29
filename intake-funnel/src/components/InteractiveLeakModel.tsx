@@ -171,7 +171,7 @@ export default function InteractiveLeakModel() {
                 <AnimatedNumber 
                   value={totalRevenueLoss} 
                   prefix="₹" 
-                  className="text-6xl md:text-7xl font-black text-red-500 tracking-tighter drop-shadow-[0_0_25px_rgba(220,38,38,0.4)]" 
+                  className="text-4xl sm:text-6xl md:text-7xl font-black text-red-500 tracking-tighter drop-shadow-[0_0_25px_rgba(220,38,38,0.4)]" 
                 />
               </div>
 
